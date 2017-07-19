@@ -37,4 +37,21 @@ describe Game do
       expect(game.current_turn).to eq player2
     end
   end
+
+  describe "#loser" do
+    it "returns the loser" do
+      allow(player1).to receive(:hit_points) { 60 }
+      allow(player2).to receive(:hit_points) { 0 }
+      expect(game.loser).to eq player2
+    end
+  end
+
+  describe '#game_over?' do
+    it "makes the game over" do
+      allow(player1).to receive(:hit_points) { 60 }
+      allow(player2).to receive(:hit_points) { 0 }
+      expect(game).to be_game_over
+    end
+  end
+  
 end

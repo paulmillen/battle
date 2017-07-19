@@ -27,9 +27,23 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  post '/attack' do
+    @game = $game
+    if @game.game_over?
+      redirect '/game-over'
+    else
+      redirect '/attack'
+    end
+  end
+
   post '/switch-turns' do
     $game.switch_turns
     redirect '/play'
+  end
+
+  get '/game-over' do
+    @game = $game
+    erb :game_over
   end
 
   run if app_file == 0
