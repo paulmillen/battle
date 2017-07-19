@@ -14,8 +14,8 @@ class Game
     players.last
   end
 
-  def attack
-    opponent_of(current_turn).receive_damage
+  def current_opponent
+    opponent_of(current_turn)
   end
 
   def switch_turns

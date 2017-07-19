@@ -18,10 +18,9 @@ describe Game do
     end
   end
 
-  describe "#attack" do
-    it "attacks the other player" do
-      expect(player2).to receive(:receive_damage)
-      game.attack
+  describe "#current_opponent" do
+    it "returns the current opponent" do
+      expect(game.current_opponent).to eq player2
     end
   end
 
@@ -53,5 +52,5 @@ describe Game do
       expect(game).to be_game_over
     end
   end
-  
+
 end
