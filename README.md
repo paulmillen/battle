@@ -9,7 +9,7 @@ Clone this repo.  In the root's CL:
 `$ bundle install`  
 `$ rackup`  
 
-Visit [localhost:9292] to play.
+Visit localhost:9292 to play.
 
 ## Comments
 
